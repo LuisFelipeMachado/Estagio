@@ -1,7 +1,9 @@
 <?php
-   
-  $email = "luis.machado@gmail.com";
+  $nome = $_POST ['nome'];
+  $email = $_POST ['teste@exemple.com'];
+  $idade = $_POST ['idade'];
 
+//IF Idade
 
   function Validaremail ($email) {
 
