@@ -4,38 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário Desafio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teste.css">
 </head>
 <body>
    
     <div class="wrapper">
         <form action="form.php" method="post">
             <h1>Formulário</h1>
-            <div class="input-box"> 
-                <input type="text" placeholder="Nome" required> 
-            </div>
-            <div class="input-box">
-                <input type="text" placeholder="Sobrenome" required>
-            </div>
-            <div class="input-box">
-                <input type="email" placeholder="Email" id="" required>
-            </div>
-            <div class="input-box">
-                <input type="text" placeholder="CPF" id="" required>  
-            </div>
-            <div class="input-box">
-                <input type="text" placeholder="Idade" id="" required>
-            </div>
-            <div>
-                <input type="password" placeholder="Senha" id="" required>
-            </div>
-            <div>
-                <input type="password" placeholder="Confirme sua senha" id="">
-            </div>
-            <div>
-                <input type="submit" value="Enviar Formulario">
-            </div>
+            <label for="Nome">Nome</label>
+        <input type="text" name="Nome" id="Nome" placeholder="Nome" required>
 
+        <label for="Sobrenome">Sobrenome</label>
+        <input type="text" name="Sobrenome" id="Sobrenome" placeholder="Sobrenome" required>
+
+        <label for="Email">Email</label>
+        <input type="email" name="Email" id="Email" placeholder="Email" required>
+
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" placeholder="CPF" required>
+
+        <label for="idade">Idade</label>
+        <input type="text" name="idade" id="idade" placeholder="Idade" required>
+
+        <label for="Senha">Senha</label>
+        <input type="password" name="Senha" id="Senha" placeholder="Senha" required>
+
+        <label for="ConfirmaSenha">Confirme sua senha</label> 
+        <input type="password" name="ConfirmaSenha" id="ConfirmaSenha" placeholder="Confirme sua senha" required>
+
+        <input type="submit" value="Enviar Formulário">
             
         </form>
 
