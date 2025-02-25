@@ -68,6 +68,6 @@ if ($senha !== $confirma_Senha) {
 elseif (strlen($senha) < 6) {
   echo "A senha deve ter pelo menos 6 caracteres";
 }
- }
+}
 
 ?>
