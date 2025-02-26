@@ -1,4 +1,6 @@
 <?php
+  
+  $arquivo_json = 'dados.json';
 
 $arquivo_json = 'dados.json';
 
