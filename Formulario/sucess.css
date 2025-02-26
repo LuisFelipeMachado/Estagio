@@ -1,0 +1,12 @@
+body {
+    background-image: url(img.jpg);
+}
+
+h1 {
+    color: white;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

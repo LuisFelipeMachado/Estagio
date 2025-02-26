@@ -11,10 +11,17 @@ $idade = isset($_POST['idade']) ? $_POST['idade'] : '';
 $senha = $_POST['senha'];
 $confirma_Senha = $_POST['senha'];
 $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : '';
+
+
 function ValidarCPF($cpf) {
     $cpf = preg_replace('/\D/', '', $cpf);
 
-    if (strlen($cpf) != 11 || preg_match('/(\d)\1{10}/', $cpf)) {
+    if (strlen($cpf) != 11) {
+        echo "Por favor, coloque um CPF com exatamente 11 caracteres.<br>";
+        return false;
+    }
+    if (preg_match('/(\d)\1{10}/', $cpf)) {
+        echo "CPF inválido! Sequência de números repetidos não é permitida.<br>";
         return false;
     }
 
@@ -33,10 +40,11 @@ function ValidarCPF($cpf) {
     if ($cpf[9] == $D1 && $cpf[10] == $D2) {
         return true;
     } else {
+        echo "CPF inválido! Dígitos verificadores não conferem.<br>";
         return false;
     }
 }
-
+ 
 function validarEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
@@ -46,19 +54,11 @@ if (validarEmail($email)) {
 } else {
     echo "E-mail inválido.<br>";
 }
-
-if ($idade < 15 || $idade > 90) {
-    echo "A idade deve estar entre 15 e 90 anos.";}
-
-    elseif ($senha !== $confirma_Senha) {
-        echo "As senhas não coincidem. Por favor, digite as mesmas senhas.";
-    } elseif (strlen($senha) < 6) {
-        echo "A senha deve ter pelo menos 6 caracteres.";
-    } else {
-        // Após validações passadas, redireciona para a página de sucesso
-        header("Location: sucess.html");
-        exit(); // Garante que o redirecionamento aconteça imediatamente
-    }
+if (!ValidarCPF($cpf)) {
+    echo "Por favor, corrija o CPF e tente novamente.<br>";
+    return;
+    
+}
 $dados = array(
     'nome' => $nome,
     'sobrenome' => $sobrenome,
@@ -77,5 +77,18 @@ if (file_exists($arquivo_json)) {
 $json_array[] = $dados;
 
 file_put_contents($arquivo_json, json_encode($json_array, JSON_PRETTY_PRINT));
+
+if ($idade < 15 || $idade > 90) {
+    echo "A idade deve estar entre 15 e 90 anos.";}
+
+    elseif ($senha !== $confirma_Senha) {
+        echo "As senhas não coincidem. Por favor, digite as mesmas senhas.";
+    } elseif (strlen($senha) < 6) {
+        echo "A senha deve ter pelo menos 6 caracteres.";
+        return false;
+    } else {
+        header("Location: sucess.html");
+        exit(); 
+    }
 
 ?>
