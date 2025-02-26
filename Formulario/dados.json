@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "nome": "luis",
@@ -42,3 +43,12 @@
         "cpf": "123"
     }
 ]
+=======
+{
+    "nome": "João",
+    "sobrenome": "Oliveira",
+    "email": "joao@example.com",
+    "idade": "12",
+    "cpf": "12345678901"
+}
+>>>>>>> origin/main

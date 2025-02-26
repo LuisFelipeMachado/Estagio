@@ -1,5 +1,8 @@
 <?php
+  
+  $arquivo_json = 'dados.json';
 
+<<<<<<< HEAD
 $arquivo_json = 'dados.json';
 
 $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
@@ -11,6 +14,39 @@ $confirma_Senha = $_POST['senha'];
 $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : '';
 function ValidarCPF($cpf) {
     $cpf = preg_replace('/\D/', '', $cpf);
+=======
+  $dados = array (
+  'nome' => $nome,
+  'email' => $email,
+  'idade' => $idade
+);
+
+if (file_exists($arquivo_json))
+$json_data = file_get_contents ($arquivo_json);
+
+$nome = $_POST['nome'];
+$email = $_POST['email'];   //**Conectar JSON */
+$idade = $_POST['idade'];
+$senha = $_POST['senha'];
+$confirma_Senha['confirma_senha'];
+
+function ValidarEmail($email) {
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+if (ValidarEmail($email)) {
+    echo "Email validado com sucesso!<br>";
+} else {
+    echo "Email inválido.<br>";
+}
+
+function ValidarCPF($cpf) {
+    $cpf = preg_replace('/[^0-9]/', '', $cpf);
+>>>>>>> origin/main
 
     if (strlen($cpf) != 11 || preg_match('/(\d)\1{10}/', $cpf)) {
         return false;
@@ -35,6 +71,7 @@ function ValidarCPF($cpf) {
     }
 }
 
+<<<<<<< HEAD
 function validarEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
@@ -75,5 +112,19 @@ if (file_exists($arquivo_json)) {
 $json_array[] = $dados;
 
 file_put_contents($arquivo_json, json_encode($json_array, JSON_PRETTY_PRINT));
+=======
+$cpf = $_POST['cpf'];
+if (ValidarCPF($cpf)) {
+    echo "CPF validado com sucesso!<br>";   //HEADER SUCESS.HTML
+} else {
+    echo "CPF inválido.<br>";
+if ($senha !== $confirma_Senha) {
+  echo "As senhas não coincidem. Porfavor, Digite as mesmas senhas";
+}
+elseif (strlen($senha) < 6) {
+  echo "A senha deve ter pelo menos 6 caracteres";
+}
+}
+>>>>>>> origin/main
 
 ?>
