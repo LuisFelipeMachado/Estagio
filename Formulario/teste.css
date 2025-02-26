@@ -1,30 +1,70 @@
+<<<<<<< HEAD
  
+=======
+<<<<<<< HEAD
+ 
+=======
+/* Estilos para o corpo e a página */
+>>>>>>> origin/main
+>>>>>>> origin/main
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     height: 100vh; 
     margin: 0;
 }
 
  
+<<<<<<< HEAD
+=======
+=======
+    height: 100vh; /* Faz com que o corpo ocupe toda a altura da tela */
+    margin: 0;
+}
+
+/* Container do formulário */
+>>>>>>> origin/main
+>>>>>>> origin/main
 .wrapper {
     background-color: #fff;
     border-radius: 8px;
     padding: 30px;
     width: 100%;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     max-width: 500px;  
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  
 }
 
  
+<<<<<<< HEAD
+=======
+=======
+    max-width: 500px; /* Limita a largura máxima do formulário */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave ao redor */
+}
+
+/* Estilo do título */
+>>>>>>> origin/main
+>>>>>>> origin/main
 h1 {
     text-align: center;
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
  
 form {
     display: flex;
@@ -33,22 +73,56 @@ form {
 }
 
  
+<<<<<<< HEAD
+=======
+=======
+/* Estilos do formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os campos */
+}
+
+/* Estilo para os rótulos */
+>>>>>>> origin/main
+>>>>>>> origin/main
 label {
     font-size: 14px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
+<<<<<<< HEAD
  
+=======
+<<<<<<< HEAD
+ 
+=======
+/* Estilo para os campos de entrada */
+>>>>>>> origin/main
+>>>>>>> origin/main
 input {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     width: 100%;  
 }
 
  
+<<<<<<< HEAD
+=======
+=======
+    width: 100%; /* Faz com que os inputs ocupem toda a largura do formulário */
+}
+
+/* Estilo específico para o botão de envio */
+>>>>>>> origin/main
+>>>>>>> origin/main
 input[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -59,16 +133,38 @@ input[type="submit"] {
     border-radius: 5px;
     transition: background-color 0.3s ease;
     width: auto;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
     margin: 0 auto;  
     display: block;
 }
 
  
+<<<<<<< HEAD
+=======
+=======
+    margin: 0 auto; /* Centraliza o botão */
+    display: block;
+}
+
+/* Efeito de hover no botão */
+>>>>>>> origin/main
+>>>>>>> origin/main
 input[type="submit"]:hover {
     background-color: #45a049;
 }
 
+<<<<<<< HEAD
  
+=======
+<<<<<<< HEAD
+ 
+=======
+/* Estilo para o placeholder */
+>>>>>>> origin/main
+>>>>>>> origin/main
 input::placeholder {
     color: #888;
 }
