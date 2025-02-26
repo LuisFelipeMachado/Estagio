@@ -5,6 +5,9 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
 >>>>>>> origin/main
 $arquivo_json = 'dados.json';
 
@@ -17,6 +20,8 @@ $confirma_Senha = $_POST['senha'];
 $cpf = isset($_POST['cpf']) ? $_POST['cpf'] : '';
 function ValidarCPF($cpf) {
     $cpf = preg_replace('/\D/', '', $cpf);
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 =======
@@ -53,6 +58,7 @@ function ValidarCPF($cpf) {
     $cpf = preg_replace('/[^0-9]/', '', $cpf);
 >>>>>>> origin/main
 >>>>>>> origin/main
+>>>>>>> origin/main
 
     if (strlen($cpf) != 11 || preg_match('/(\d)\1{10}/', $cpf)) {
         return false;
@@ -80,6 +86,9 @@ function ValidarCPF($cpf) {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/main
 >>>>>>> origin/main
 function validarEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -121,6 +130,8 @@ if (file_exists($arquivo_json)) {
 $json_array[] = $dados;
 
 file_put_contents($arquivo_json, json_encode($json_array, JSON_PRETTY_PRINT));
+<<<<<<< HEAD
+=======
 =======
 $cpf = $_POST['cpf'];
 if (ValidarCPF($cpf)) {
@@ -134,6 +145,7 @@ elseif (strlen($senha) < 6) {
   echo "A senha deve ter pelo menos 6 caracteres";
 }
 }
+>>>>>>> origin/main
 >>>>>>> origin/main
 
 ?>
