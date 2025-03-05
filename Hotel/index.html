@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Hotel</title>
+</head>
+<body>
+
+    <h2>🏨 Sistema de Hotel</h2>
+
+    <h3>📌 Escolha um Quarto</h3>
+
+    <form action="reservar.php" method="POST">
+        <label>Nome do Hóspede:</label>
+        <input type="text" name="hospede" required>
+        <br><br>
+
+        <label>Quarto:</label>
+        <select name="quarto">
+            <option value="101">Quarto 101 (Simples) - R$100</option>
+            <option value="202">Quarto 202 (Luxo) - R$250</option>
+            <option value="303">Quarto 303 (Simples) - R$100</option>
+            <option value="404">Quarto 404 (Luxo) - R$250</option>
+        </select>
+        <br><br>
+
+        <label>Dias de Estadia:</label>
+        <input type="number" name="dias" min="1" required>
+        <br><br>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+</body>
+</html>
