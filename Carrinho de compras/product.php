@@ -6,6 +6,7 @@ class Product {
     private string $name;
     private int $price;
     private int $quantity;
+
     public function setId(int $id) {
         $this->id = $id;
     }
