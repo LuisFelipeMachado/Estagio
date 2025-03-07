@@ -21,15 +21,21 @@ abstract class movimento {
     public function getDano(){
         return $this->dano;
     }
-public function usarMovimento($pokemonAtack, $pokemonDefensor){
-    echo $pokemonAtack->getnome() ."usa" . $this->nome;
+
+    public function calcularDano(movimento $movimento){
+
+    }
+
+
+    public function usarMovimento($pokemonAtack, $pokemonDefensor){
+    echo $pokemonAtack->getNome() ."usa" . $this->nome;
 
     $danoFinal = $this->dano;
-  if(in_array($this->tipo, $pokemonDefensor->getFraquezas())){
+  if(in_array($this->tipo, $pokemonDefensor->getFraqueza())){
     $danoFinal *= 2;
     echo "É super Eficaz!!";
   }
-  elseif (in_array($this->tipo, $pokemonDefensor->getresistencia())){
+  elseif (in_array($this->tipo, $pokemonDefensor->getResistencia())){
 
     $danoFinal /= 2; 
     echo "Não é muito eficaz!!";

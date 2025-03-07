@@ -43,11 +43,12 @@ abstract class pokemon {
         }
     }
     private function calcularHealth(){
-        return $this->hpbase * 2;
+        return (((31 * 2 ) /4 + $this->hpbase + 100) / 100) * 50 + 10 +50;
     }
-    private function calcularEstatistica  (){
-        return $this->hpbase * 1.5;
+    private function calcularEstatistica($stat){
+        return ((2 * $stat + 31) * 50 / 100) + 5;
     }
+
     abstract function habilidadePassiva();
 }
 
@@ -57,11 +58,9 @@ abstract class Squirtle extends pokemon {
 
 }
 
-abstract class Charmander extends pokemon {
+abstract class Charmander extends pokemon {}
 
-}
 
 abstract class Pikachu extends pokemon{
-
 
 }
