@@ -16,22 +16,22 @@
     abstract class TipoFogo extends tipo {
     public function __construct() {
         parent::__construct('Fogo');
-        $this->fraquezas = ["Água", "Terrestre"];
+        $this->fraqueza = ["Água", "Terrestre"];
         $this->resistencia = ["Fogo", "Gama"];
     }
     public function getFraquezas(){
-        return $this->fraquezas;
+        return $this->fraqueza;
     }
     public function getResistencia(){
     return $this->resistencia;
 }
     }
-    abstract class TipoAgua extends tipo {
+     abstract class TipoAgua extends tipo {
         public function __construct() {
         parent::__construct('Água');
-        $this->fraquezas = ["Eletrico", "Gama"];
+        $this->fraqueza = ["Eletrico", "Gama"];
         }
-        public function getFraquezas(){
+        public function getFraqueza(){
             return $this->fraqueza;
         }
         public function getResistencia() {

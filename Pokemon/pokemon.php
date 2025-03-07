@@ -9,14 +9,14 @@ abstract class pokemon {
     protected string $fraquezas;
     protected string $resistencia;
     protected float $hpbase;
-    protected string $health;
-    protected string $ataque;
-    protected string $defesa;
-    protected string $ataqueEspecial;
+    protected float $health;
+    protected float $ataque;
+    protected float $defesa;
+    protected float $ataqueEspecial;
 
-    private function __construct($name, $tipo, $movimento,
+    protected function __construct($name, $tipo, $movimento, $fraquezas, $resistencia,
     $hpbase, $health, $ataque, $defesa, $ataqueEspecial){
-        $this->nome = $nome;
+        $this->name = $name;
         $this->tipo = $tipo;
         $this->movimentos = $movimento;
         $this->fraquezas = $fraquezas;
@@ -31,21 +31,21 @@ abstract class pokemon {
         return $this->name;
     }
     public function getTipos(){
-        return $this->tipos;
+        return $this->tipo;
     }
     public function getMovimentos(){
         return $this->movimentos;
     }
     public function reduzirVida($dano){
         $this->health -= $dano;
-        if($this->health < 0);{
+        if($this->health < 0){
             $this->health = 0;
         }
     }
     private function calcularHealth(){
         return $this->hpbase * 2;
     }
-    private function calcularEstatica(){
+    private function calcularEstatistica  (){
         return $this->hpbase * 1.5;
     }
     abstract function habilidadePassiva();
