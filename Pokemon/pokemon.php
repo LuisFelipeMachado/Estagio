@@ -49,8 +49,12 @@ private function calcularEstatistica($stat){
     return ((2 * $stat + 31) * 50 / 100) + 5;
 }
 
-    abstract function habilidadePassiva();
-}
+    private function habilidadePassiva(){
+        $recuperacao = $this->health * 0.10;
+        $this->health += $recuperacao;
+        echo $this->name . "Recupera 10% de vida! Nova vida:". $this->health;
+        }
+    }
 
 abstract class Squirtle extends pokemon {
     public function __construct(){
