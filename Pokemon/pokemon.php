@@ -8,20 +8,20 @@ abstract class pokemon {
     protected string $movimentos;
     protected string $fraquezas;
     protected string $resistencia;
-    protected float $hpbase;
+    protected float $hp;
     protected float $health;
     protected float $ataque;
     protected float $defesa;
     protected float $ataqueEspecial;
 
     protected function __construct($name, $tipo, $movimento, $fraquezas, $resistencia,
-    $hpbase, $health, $ataque, $defesa, $ataqueEspecial){
+    $hp, $health, $ataque, $defesa, $ataqueEspecial){
         $this->name = $name;
         $this->tipo = $tipo;
         $this->movimentos = $movimento;
         $this->fraquezas = $fraquezas;
         $this->resistencia = $resistencia;
-        $this->hpbase = $hpbase;
+        $this->hp = $hp;
         $this->health = $this->calcularHealth();
         $this->ataque = $this->calcularEstatistica();
         $this->defesa = $this->calcularEstatistica();
@@ -43,24 +43,40 @@ abstract class pokemon {
         }
     }
     private function calcularHealth(){
-        return (((31 * 2 ) /4 + $this->hpbase + 100) / 100) * 50 + 10 +50;
+        return (((31 * 2 ) /4 + $this->hp + 100) / 100) * 50 + 10 +50;
     }
-    private function calcularEstatistica($stat){
-        return ((2 * $stat + 31) * 50 / 100) + 5;
-    }
+private function calcularEstatistica($stat){
+    return ((2 * $stat + 31) * 50 / 100) + 5;
+}
 
     abstract function habilidadePassiva();
 }
 
 abstract class Squirtle extends pokemon {
     public function __construct(){
-    }
+    parent::__construct('Squirtle', 'Água', 
+    ['Jato d\'Água', 'Cascata'], ['Eletrico', 'Terrestre'],
+    ['Água', 'Fogo'], 44, 48, 65, 50);
 
 }
+}
 
-abstract class Charmander extends pokemon {}
+abstract class Charmander extends pokemon {
+    public function __construct() {
+    parent::__construct('Charmander', 'Fogo',
+    ['Lança-Chamas','Chama Final'],
+    ['Água', 'Terrestre'],
+    ['Fogo', 'Gelo'], 39, 52, 43, 60);
+    }
+}
 
 
 abstract class Pikachu extends pokemon{
+    public function __construct() {
+    parent::__construct('Pikachu', 'Eletrico',
+    ['Raio', 'Choque do Trovão'],
+    ['Terrestre'],
+    ['Eletrico'], 35, 55, 40, 50);
+    }
 
 }

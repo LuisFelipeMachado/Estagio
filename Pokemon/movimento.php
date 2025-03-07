@@ -22,8 +22,9 @@ abstract class movimento {
         return $this->dano;
     }
 
-    public function calcularDano(movimento $movimento){
-
+    public function calcularDano(pokemon $pokemonAtack, pokemon $pokemonDefensor, $isEspecial = false){
+    $atk = $isEspecial ? $pokemonAtack->getAtaqueEspecial() : $pokemonAtack->getAtaque();
+    $def = $pokemonDefensor->getDefesa();
     }
 
 
@@ -37,7 +38,8 @@ abstract class movimento {
   }
   elseif (in_array($this->tipo, $pokemonDefensor->getResistencia())){
 
-    $danoFinal /= 2; 
+    $danoFinal = (50 * 0.4) + (2 * $this->dano * (atk/def));
+    $danoFinal *= $multiplicador;
     echo "Não é muito eficaz!!";
   }
 

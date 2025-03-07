@@ -1,5 +1,7 @@
 <?php 
-    
+    require 'movimentos.php';
+    require 'pokemon';
+
    abstract class tipo {
     
     protected $nome;
