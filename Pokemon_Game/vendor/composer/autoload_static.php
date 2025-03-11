@@ -24,15 +24,15 @@ class ComposerStaticInit26038bdf49ffa28f0e3590d08e65eb57
     public static $prefixDirsPsr4 = array (
         'Tipos\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/tipos',
+            0 => __DIR__ . '/../..' . '/Tipos',
         ),
         'Pokemons\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/pokemons',
+            0 => __DIR__ . '/../..' . '/Pokemons',
         ),
         'Movimentos\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/movimentos',
+            0 => __DIR__ . '/../..' . '/Movimentos',
         ),
     );
 

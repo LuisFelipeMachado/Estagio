@@ -1,6 +1,8 @@
 <?php
 namespace Pokemons;
 
+use Cache\CacheFIFO;
+
 abstract class Pokemon {
     protected string $name;
     protected string $tipo;

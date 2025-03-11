@@ -6,7 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Tipos\\' => array($baseDir . '/tipos'),
-    'Pokemons\\' => array($baseDir . '/pokemons'),
-    'Movimentos\\' => array($baseDir . '/movimentos'),
+    'Tipos\\' => array($baseDir . '/Tipos'),
+    'Pokemons\\' => array($baseDir . '/Pokemons'),
+    'Movimentos\\' => array($baseDir . '/Movimentos'),
 );

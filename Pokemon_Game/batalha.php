@@ -6,6 +6,7 @@ use Pokemons\Squirtle;
 use Pokemons\Pikachu;
 use Movimentos\AtaqueFisico;
 use Movimentos\AtaqueEspecial;
+use Cache\cachefifo;
 
 echo "Selecione o seu Pokémon:\n";
 $opcoes = [
@@ -18,7 +19,7 @@ foreach ($opcoes as $numero => $pokemon){
     echo "$numero -" . $pokemon->getName() . "\n";
 }
 
-$entrada = readline("Digite um Número do seu Pokémon\n");
+$entrada = readline("Digite um Número do seu Pokémon \n");
 $jogador = $opcoes[$entrada] ?? new Charmander();
 
 echo "\nVocê Escolheu: " . $jogador->getName() . "\n";
@@ -37,7 +38,7 @@ $adversarios = array_filter($todos, function($pokemon) use ($jogador) {
 
 $adversarios = array_values($adversarios);
 $adversario= $adversarios[array_rand($adversarios)];
-echo "\nSeu adversário será" . $adversario->getName() . "\n";
+echo "\nSeu adversário será " . $adversario->getName() . "\n";
 
 function criarMovimentos($pokemon){
     $tipo = strtolower($pokemon->getTipo());
@@ -51,7 +52,7 @@ function criarMovimentos($pokemon){
         $movimentos [] = new AtaqueEspecial("Jato de Água", 40, "Especial", "Água");
     }
     elseif ($tipo === "eletrico" || $tipo === "Eletrico"){
-        $movimentos [] = new AtaqueFisico("Investida Eletrica", 30, "Fisico", "Elétrico");
+        $movimentos [] = new AtaqueFisico("Raio Eletrico", 30, "Fisico", "Elétrico");
         $movimentos [] = new AtaqueEspecial("Choque do Trovão", 40, "Especial", "Elétrico");
     }
     return $movimentos;
