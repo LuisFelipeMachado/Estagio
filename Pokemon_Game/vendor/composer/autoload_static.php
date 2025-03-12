@@ -19,6 +19,14 @@ class ComposerStaticInit26038bdf49ffa28f0e3590d08e65eb57
         array (
             'Movimentos\\' => 11,
         ),
+        'C' => 
+        array (
+            'Cache\\' => 6,
+        ),
+        'A' => 
+        array (
+            'ApiTerceiros\\' => 13,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -33,6 +41,14 @@ class ComposerStaticInit26038bdf49ffa28f0e3590d08e65eb57
         'Movimentos\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Movimentos',
+        ),
+        'Cache\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Cache',
+        ),
+        'ApiTerceiros\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/ApiTerceiros',
         ),
     );
 

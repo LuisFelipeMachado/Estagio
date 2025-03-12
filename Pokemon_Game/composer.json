@@ -1,12 +1,12 @@
 {
-    "name": "seu_nome/pokemon_game",
-    "autoload": {
-      "psr-4": {
-        "Pokemons\\": "Pokemons/",
-        "Movimentos\\": "Movimentos/",
-        "Tipos\\": "Tipos/"
-      }
-    },
-    "require": {}
-  }
-  
+  "autoload": {
+    "psr-4": {
+      "Pokemons\\": "Pokemons/",
+      "Movimentos\\": "Movimentos/",
+      "Tipos\\": "Tipos/",
+      "Cache\\": "Cache/",
+      "ApiTerceiros\\": "ApiTerceiros/"
+    }
+  },
+  "require": {}
+}

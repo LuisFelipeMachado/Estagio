@@ -1,41 +1,25 @@
 <?php
+namespace Cache;
 
-class CacheLRU{
-    private $capacity;
-    private $cache;
-    private $order;
-
-    public function __construct($capacity){
-        $this->capacity = $capacity;
-        $this->cache = [];
-        $this->order = [];
-    }
-    public function get($Key) {
-        if (isset($this->cache[$key])) {
-            return $this->updateOrder[$key];
-        }
-        return -1;
-        }
-       public function put($key, $value){
-        if (isset($this->cache[$key])){
-            $this->cache[$key] = $value;
-            $this->updateOrder($key);
+class CacheLRU extends CacheBase {
+    protected function evict(): void {
+        if (empty($this->itens)) {
             return;
         }
-        if (count($this->cache) >= $this->capacity){
-            $this->evict();
+        $lru = null;
+        $tempoMenosRecente = PHP_INT_MAX;
+        foreach ($this->itens as $chave => $info) {
+            if ($info['timestamp'] < $tempoMenosRecente) {
+                $tempoMenosRecente = $info['timestamp'];
+                $lru = $chave;
+            }
         }
-        $this->cache[$key];
-        $this->order[] = $key;
-       }
-       public function updateOrder($key) {
-        $index = array_search($key, $this->order);
-        unset($this->order [index]);
-        $this->order[] = $key;
-       }
-       private function evict(){
-        $oldestKey = array_shift($this->order);
-        unset($this->cache [$oldestKey]);
-       }
+        if ($lru !== null) {
+            $this->remover($lru);
+        }
     }
-    
+
+    protected function atualizarAposGet($chave): void {
+        $this->itens[$chave]['timestamp'] = microtime(true);
+    }
+}

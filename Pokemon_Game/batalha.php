@@ -6,7 +6,7 @@ use Pokemons\Squirtle;
 use Pokemons\Pikachu;
 use Movimentos\AtaqueFisico;
 use Movimentos\AtaqueEspecial;
-use Cache\cachefifo;
+use ApiTerceiros\ConsumirApi;
 
 echo "Selecione o seu Pokémon:\n";
 $opcoes = [

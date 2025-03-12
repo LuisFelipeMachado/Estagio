@@ -1,30 +1,21 @@
 <?php
-  namespace Cache;
+namespace Cache;
 
-    Class cacheFIFO {
-        private array $chace;
-        private $capacity;
-
-        public function __construct($capacity) {
-            $this->cache = [];
-            $this->capacity = $capacity;
+class CacheFIFO extends CacheBase {
+    protected function evict(): void {
+        if (empty($this->itens)) {
+            return;
         }
-
-        public function get($key) {
-            if (isset($this->cache[$key])) {
-                return $this->cache[$key];
+        $maisAntigo = null;
+        $tempoMaisAntigo = PHP_INT_MAX;
+        foreach ($this->itens as $chave => $info) {
+            if ($info['timestamp'] < $tempoMaisAntigo) {
+               $tempoMaisAntigo = $info['timestamp'];
+               $maisAntigo = $chave;
             }
-            return null;
+        }
+        if ($maisAntigo !== null) {
+           $this->remover($maisAntigo);
+        }
     }
-        public function set($key, $value){
-            if (count($this->cache) >= $this->capacity){
-                array_shift($this->cache);
-            }
-        $this ->cache[$key] = value;
-        }
-        public function getCache(){
-            return $this->cache;
-        }
-        }
-
-
+}

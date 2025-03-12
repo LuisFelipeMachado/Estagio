@@ -79,7 +79,8 @@ abstract class Pokemon {
 
     public function aplicarPassiva(): void {
         $recuperacao = $this->health * 0.10;
-        $this->health += $recuperacao;
+       $this->health += $recuperacao;
+       echo "\n{$this->name} recuperou {$recuperacao} de HP! Novo HP: {$this->health}\n";
     }
 }
 

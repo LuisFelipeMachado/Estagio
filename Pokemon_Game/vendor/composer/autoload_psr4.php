@@ -9,4 +9,6 @@ return array(
     'Tipos\\' => array($baseDir . '/Tipos'),
     'Pokemons\\' => array($baseDir . '/Pokemons'),
     'Movimentos\\' => array($baseDir . '/Movimentos'),
+    'Cache\\' => array($baseDir . '/Cache'),
+    'ApiTerceiros\\' => array($baseDir . '/ApiTerceiros'),
 );
