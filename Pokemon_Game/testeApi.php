@@ -10,7 +10,7 @@ $respostaGet = $clienteApi->fazerGet("users/2");
 echo "Resposta GET:\n";
 echo $respostaGet . "\n\n";
 
-$dados = ["name" => "Fernando", "job" => "Desenvolvedor"];
+$dados = ["name" => "Luis", "job" => "Desenvolvedor"];
 $respostaPost = $clienteApi->fazerPost("users", $dados);
 echo "Resposta POST:\n";
 echo $respostaPost . "\n";

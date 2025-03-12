@@ -6,7 +6,8 @@ use Pokemons\Squirtle;
 use Pokemons\Pikachu;
 use Movimentos\AtaqueFisico;
 use Movimentos\AtaqueEspecial;
-use ApiTerceiros\ConsumirApi;
+use Cache\CacheFIFO;
+use Cache\CacheLRU;
 
 echo "Selecione o seu Pokémon:\n";
 $opcoes = [
@@ -47,11 +48,11 @@ function criarMovimentos($pokemon){
         $movimentos [] = new AtaqueFisico("Investida Flamejante", 30, "Fisico", "fogo");
         $movimentos [] = new AtaqueEspecial("Lança-Chamas", 40, "Especial", "fogo");
     }
-    elseif ($tipo === "agua" || $tipo === "Água") {
+    elseif ($tipo === "agua") {
         $movimentos [] = new AtaqueFisico("Investida Áquatica", 30, "Físico", "Água");
         $movimentos [] = new AtaqueEspecial("Jato de Água", 40, "Especial", "Água");
     }
-    elseif ($tipo === "eletrico" || $tipo === "Eletrico"){
+    elseif ($tipo === "eletrico"){
         $movimentos [] = new AtaqueFisico("Raio Eletrico", 30, "Fisico", "Elétrico");
         $movimentos [] = new AtaqueEspecial("Choque do Trovão", 40, "Especial", "Elétrico");
     }
@@ -92,3 +93,21 @@ function criarMovimentos($pokemon){
     }
 
     echo "\nBatalha Finalizada\n";
+
+    $resultadoBatalha = [
+        'vencedor'    => ($jogador->getHealth() > 0) ? $jogador->getName() : $adversario->getName(),
+        'turnos'      => $turno,
+        'hp_restante' => ($jogador->getHealth() > 0) ? $jogador->getHealth() : $adversario->getHealth()
+    ];
+    
+    $cacheFIFO = new Cache\CacheFIFO("10KB");
+    $cacheFIFO->set("resultado_batalha_fifo", $resultadoBatalha);
+    $cacheFIFO->mostrarUso();
+    echo "FIFO \n";
+    
+    $cacheLRU = new Cache\CacheLRU("10KB");
+    $cacheLRU->set("resultado_batalha_lru", $resultadoBatalha);
+    $cacheLRU->mostrarUso();
+    echo "LRU";
+
+    
